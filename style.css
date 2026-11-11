@@ -110,3 +110,30 @@ footer small {
   color: var(--text-muted);
   font-size: 13px;
 }
+
+@media (min-width: 768px) {
+  .page {
+    padding: 48px 24px;
+  }
+
+  .avatar {
+    width: 96px;
+    height: 96px;
+    font-size: 40px;
+  }
+
+  .profile h1 {
+    font-size: 28px;
+  }
+
+  .links a {
+    padding: 16px 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page {
+    max-width: 480px;
+    gap: 32px;
+  }
+}
