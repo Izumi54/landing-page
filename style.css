@@ -92,6 +92,12 @@ body {
   gap: 32px;
 }
 
+.layout {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
 .profile {
   display: flex;
   flex-direction: column;
@@ -123,6 +129,30 @@ body {
 .tagline {
   color: var(--text-muted);
   font-size: 14px;
+}
+
+.profile-note {
+  display: none;
+  color: var(--text-muted);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.links-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.links-heading {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
 }
 
 .links {
@@ -174,8 +204,18 @@ body {
   color: var(--accent);
 }
 
-.link-label {
+.link-body {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.link-desc {
+  display: none;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--text-muted);
 }
 
 .link-arrow {
@@ -199,7 +239,26 @@ footer small {
 
 @media (min-width: 768px) {
   .page {
-    padding: 48px 24px;
+    max-width: 880px;
+    padding: 48px 32px;
+    gap: 40px;
+  }
+
+  .layout {
+    display: grid;
+    grid-template-columns: minmax(260px, 300px) 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .profile {
+    position: sticky;
+    top: 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 24px;
+    backdrop-filter: blur(6px);
   }
 
   .avatar {
@@ -212,14 +271,20 @@ footer small {
     font-size: 28px;
   }
 
+  .profile-note {
+    display: block;
+  }
+
+  .links-heading {
+    font-size: 14px;
+  }
+
   .links a {
     padding: 16px 20px;
   }
-}
 
-@media (min-width: 1024px) {
-  .page {
-    max-width: 480px;
+  .link-desc {
+    display: block;
   }
 }
 
